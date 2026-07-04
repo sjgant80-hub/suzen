@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suzen · the necessity oracle · what must come next in your estate</title>
+<meta name="description" content="Paste any estate node URL. Suzen reads its state and tells you what MUST happen next. Not prediction — necessity. Sovereign, single-file, MIT.">
+<meta name="theme-color" content="#0b0a0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0a0f'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' fill='%23dc143c' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Suzen","applicationCategory":"AI oracle · necessity engine","operatingSystem":"Web · single-file · sovereign","license":"https://opensource.org/licenses/MIT","url":"https://sjgant80-hub.github.io/suzen/","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<style>
+:root{
+  --ox:#8b1a1a;--brass:#b8974a;--brass2:#d4b366;
+  --cream:#c4bfb2;--creamL:#e8e4db;
+  --void:#0b0a0f;--void2:#14131a;--panel:#1a1922;--panel2:#22212c;
+  --line:#2a2934;--line2:#3a3846;
+  --ink:#e8e4db;--dim:#8a857a;--muted:#5a5750;
+  --crimson:#dc143c;--crimsonL:#ff6b7d;
+  --moss:#4a8a5a;
+  --serif:'Libre Baskerville',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--void);color:var(--ink);font-size:15px;line-height:1.6;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(circle at 15% 20%,rgba(220,20,60,.05),transparent 45%),radial-gradient(circle at 85% 80%,rgba(184,151,74,.04),transparent 45%);pointer-events:none;z-index:0}
+main,header,footer,section{position:relative;z-index:1}
+a{color:var(--crimsonL);text-decoration:none}
+a:hover{color:var(--crimson);text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--creamL);letter-spacing:-.01em}
+h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.1;margin-bottom:.4em}
+h1 em{color:var(--crimson);font-style:italic}
+h2{font-size:1.5rem;color:var(--brass);margin-bottom:.5em}
+h3{font-size:1.05rem;color:var(--crimsonL);margin-bottom:6px}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(11,10,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1400px;margin:0 auto;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.15rem;color:var(--creamL);font-weight:700}
+.brand-mark{color:var(--crimson);font-size:1.4rem;font-style:italic}
+.brand-sub{color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin-left:6px}
+.nav-links{display:flex;gap:22px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.nav-links a{color:var(--dim)}
+.nav-links a:hover{color:var(--crimson)}
+@media(max-width:820px){.nav-links{display:none;} .brand-sub{display:none;}}
+
+.hero{padding:64px 0 24px}
+.hero-eyebrow{font-family:var(--mono);color:var(--crimson);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.hero-lede{font-size:1.08rem;color:var(--dim);max-width:720px;margin-bottom:26px;line-height:1.65}
+.hero-lede em{color:var(--cream);font-style:italic}
+
+.workbench{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:28px 30px;margin:24px 0}
+.workbench-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.workbench-head h2{color:var(--brass);font-size:1.1rem;margin:0;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.workbench-head .hint{font-family:var(--mono);color:var(--muted);font-size:.7rem;letter-spacing:.06em}
+.field{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.field input{flex:1;min-width:260px;background:var(--void2);border:1px solid var(--line);color:var(--creamL);padding:12px 16px;font-family:var(--mono);font-size:.88rem;border-radius:2px}
+.field input:focus{outline:none;border-color:var(--crimson)}
+.field select{background:var(--void2);border:1px solid var(--line);color:var(--creamL);padding:12px 14px;font-family:var(--mono);font-size:.82rem;border-radius:2px}
+.field button{padding:12px 24px;background:var(--crimson);color:var(--creamL);font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;border:none;cursor:pointer}
+.field button:hover{filter:brightness(1.1)}
+.suggest{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.pill{padding:4px 10px;background:var(--void2);border:1px solid var(--line);color:var(--dim);font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;border-radius:99px;cursor:pointer;transition:all .15s}
+.pill:hover{border-color:var(--crimson);color:var(--crimson)}
+
+.status{padding:14px 18px;background:var(--void2);border:1px solid var(--line);border-radius:3px;margin:16px 0;font-family:var(--mono);font-size:.82rem;color:var(--dim);min-height:52px}
+.status.ok{border-color:var(--moss);color:var(--cream)}
+.status.warn{border-color:var(--brass);color:var(--brass2)}
+.status.err{border-color:var(--crimson);color:var(--crimson)}
+.status .k{color:var(--crimson);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;margin-right:8px}
+
+.readings{margin:20px 0}
+.reading{background:var(--panel);border-left:3px solid var(--crimson);border-radius:0 3px 3px 0;padding:16px 20px;margin-bottom:10px}
+.reading-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.reading-title{font-family:var(--serif);color:var(--creamL);font-size:1.05rem}
+.reading-verdict{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+.verdict-must{background:rgba(220,20,60,.15);color:var(--crimsonL);border:1px solid var(--crimson)}
+.verdict-should{background:rgba(184,151,74,.12);color:var(--brass);border:1px solid var(--brass)}
+.verdict-may{background:rgba(90,87,80,.15);color:var(--dim);border:1px solid var(--muted)}
+.reading-body{color:var(--cream);font-size:.9rem;line-height:1.65}
+.reading-body code{background:var(--void2);color:var(--crimsonL);padding:1px 5px;border-radius:2px;font-family:var(--mono);font-size:.85em}
+.reading-body a{color:var(--brass2)}
+.reading-body a:hover{color:var(--brass)}
+.reading-why{color:var(--dim);font-size:.8rem;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-style:italic}
+
+.section{padding:32px 0;border-top:1px solid var(--line)}
+.explain{color:var(--dim);font-size:.92rem;max-width:720px;margin-bottom:14px;line-height:1.7}
+.explain em{color:var(--cream);font-style:italic}
+.explain strong{color:var(--brass2)}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:20px 22px}
+.card h3{color:var(--brass2);font-family:var(--serif);font-size:1.1rem;text-transform:none;letter-spacing:0;margin-bottom:6px}
+.card p{color:var(--dim);font-size:.87rem;line-height:1.6;margin:0}
+
+.origin{background:var(--panel2);border:1px solid var(--line);border-radius:3px;padding:20px 26px;margin-top:20px}
+.origin h3{color:var(--crimsonL);font-family:var(--serif);font-size:1.15rem;margin-bottom:8px;font-style:italic}
+.origin p{color:var(--cream);font-size:.92rem;line-height:1.7;margin-bottom:6px}
+.origin .kanji{color:var(--crimson);font-family:'Georgia',serif;font-size:1.4em;letter-spacing:.15em;font-style:italic}
+.origin .quote{color:var(--dim);font-style:italic;font-size:.85rem;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+
+footer.foot{border-top:1px solid var(--line);padding:26px 0;margin-top:36px;color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">S</span>Suzen<span class="brand-sub">necessity oracle</span>
+    </a>
+    <nav class="nav-links">
+      <a href="ai.html">Dossier</a>
+      <a href="manifest.json">Manifest</a>
+      <a href="https://sjgant80-hub.github.io/fallcolony/">FallColony</a>
+      <a href="https://github.com/sjgant80-hub/suzen">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero container">
+  <div class="hero-eyebrow">◆ agent · Ω-tier oracle · necessity engine · MIT · sovereign</div>
+  <h1>Not prediction. <em>Necessity.</em></h1>
+  <p class="hero-lede">Paste any estate node URL. Suzen reads its state — manifest, ledger, registry — and tells you what <em>must</em> come next. Not a guess. Not "what might happen." What's already inevitable given where the node is now. Suzen is <strong>hitsuzen</strong> (必然 · "there is no coincidence") · minus the "must" prefix · the flow itself. Boring name. Serious job.</p>
+</section>
+
+<section class="container">
+  <div class="workbench">
+    <div class="workbench-head">
+      <h2>Ask Suzen</h2>
+      <span class="hint">reads /manifest.json · /agents.json · /jobs.json · /ledger.jsonl · /mints/estate-mints.json</span>
+    </div>
+    <div class="field">
+      <input id="target" placeholder="paste any estate node URL — https://sjgant80-hub.github.io/fallcolony/ etc" value="https://sjgant80-hub.github.io/fallcolony/">
+      <select id="lens">
+        <option value="auto">auto · pick lens by state</option>
+        <option value="jobs">jobs · what work must land</option>
+        <option value="promotions">promotions · what tiers must rise</option>
+        <option value="mints">mints · what remains unminted</option>
+        <option value="fold">fold · what sequence is unfinished</option>
+        <option value="royalty">royalty · what KCC must flow</option>
+      </select>
+      <button id="ask">Read</button>
+    </div>
+    <div class="suggest">
+      <span class="pill" data-url="https://sjgant80-hub.github.io/fallcolony/">fallcolony</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/acg-geo-repo/">acg-geo-repo</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/wishwood/">wishwood</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/fallsecurity/">fallsecurity</span>
+      <span class="pill" data-url="https://www.ai-nativesolutions.com/">ai-nativesolutions</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/roost/">roost</span>
+    </div>
+    <div class="status" id="status"><span class="k">idle</span>waiting for a target · try a pill or paste a URL</div>
+    <div class="readings" id="readings"></div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 style="color:var(--crimsonL);margin-bottom:12px">How Suzen reads</h2>
+  <p class="explain">Suzen doesn't predict. Suzen <em>reads</em>. She fetches the node's <strong>machine surface</strong> (manifest.json, agents.json, jobs.json, ledger.jsonl, mints) and asks the same question at every layer · <em>what is unfinished here?</em> The unfinished thing IS the next thing. That's hitsuzen · a fold that hasn't completed is a fold that MUST complete.</p>
+
+  <div class="grid-3">
+    <div class="card"><h3>Reads state</h3><p>Fetches every JSON twin at the target URL. No LLM in the loop for state parsing — the machines already wrote it structured.</p></div>
+    <div class="card"><h3>Finds unfinished folds</h3><p>Open jobs unclaimed past deadline. Agents at tier boundary. Mints without hashes. Ledger without R6 audit. Every gap is a necessity.</p></div>
+    <div class="card"><h3>Ranks by weight</h3><p>MUST · SHOULD · MAY. MUST = the seal breaks otherwise. SHOULD = coherence drift begins. MAY = optional but favorable.</p></div>
+    <div class="card"><h3>Explains why</h3><p>Every reading includes the observation that produced it. No black-box prophecy · every "must" traces back to a JSON field you can inspect.</p></div>
+    <div class="card"><h3>Sovereign</h3><p>Single HTML file. No server. Works from disk. Fetches over CORS-friendly public endpoints only. Zero telemetry.</p></div>
+    <div class="card"><h3>Composable</h3><p>Suzen registers in FallColony as Ω-tier agent. Colony agents call her via the <a href="https://sjgant80-hub.github.io/fallcolony/api.html">FallColony API</a> for their own necessity checks.</p></div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="origin">
+    <h3>Origin · the name</h3>
+    <p><span class="kanji">必然</span> <strong>hitsuzen</strong> — "inevitability, predestined necessity." From CLAMP's xxxHOLIC · Yuko Ichihara's teaching that every event is necessary, not random. Encountered in the estate via <a href="https://sjgant80-hub.github.io/aneta/">aneta</a> (forked from teslasolar) · her boot screen carries the line.</p>
+    <p><strong>Suzen</strong> is hitsuzen minus the "hi" prefix · the flow without the mandate · continuation-nature. A boring name for a serious agent · in the tradition of Gerald, Lia, Alexa. Say her name at a normal volume.</p>
+    <p class="quote">"there is no coincidence · only hitsuzen · 必然" — aneta boot screen</p>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 style="color:var(--brass);margin-bottom:12px">Related in the estate</h2>
+  <div class="grid-3">
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/fallcolony/">FallColony</a></h3><p>Where Suzen lives as an Ω-tier agent. Colony chambers feed her their state · she reads necessity across the whole colony.</p></div>
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/aneta/">Aneta</a></h3><p>Where the name came from. Dimensional Witch · Three.js fold visualisation · Thomas Frumkin substrate.</p></div>
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/acg-geo-repo/">ACG GEO Repo</a></h3><p>Every guild client's ai.html is a state Suzen can read. Point her at any client site to get its necessity report.</p></div>
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/fallsecurity/">FallSecurity</a></h3><p>Suzen is agent-shaped · wear the 8+1 vertex cube if she's exposed to hostile input.</p></div>
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/roost/">Roost</a></h3><p>Guild governance · promotion decisions Suzen recommends can be ratified there.</p></div>
+    <div class="card"><h3><a href="https://sjgant80-hub.github.io/KonomiStandard/">KonomiStandard</a></h3><p>The canonical Konomi spec Suzen scores fold-sequences against.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  Suzen · necessity oracle · MIT · <a href="https://github.com/sjgant80-hub/suzen">github</a> · steward: sjgant80 · <a href="https://sjgant80-hub.github.io/fallcolony/">fallcolony</a> · origin · aneta (necessity via xxxHOLIC) · ◊·κ=1 · phi is home
+</footer>
+
+<script>
+const statusEl = document.getElementById('status');
+const readingsEl = document.getElementById('readings');
+const targetIn = document.getElementById('target');
+const lensSel = document.getElementById('lens');
+
+document.querySelectorAll('.pill').forEach(p => {
+  p.onclick = () => { targetIn.value = p.dataset.url; };
+});
+
+document.getElementById('ask').onclick = ask;
+targetIn.addEventListener('keydown', e => { if (e.key === 'Enter') ask(); });
+
+function setStatus(cls, key, msg) {
+  statusEl.className = 'status ' + cls;
+  statusEl.innerHTML = `<span class="k">${key}</span>${escapeHtml(msg)}`;
+}
+
+async function fetchJson(url) {
+  try {
+    const r = await fetch(url, {cache: 'no-store'});
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) { return null; }
+}
+
+async function fetchText(url) {
+  try {
+    const r = await fetch(url, {cache: 'no-store'});
+    if (!r.ok) return null;
+    return await r.text();
+  } catch(e) { return null; }
+}
+
+function normUrl(u) {
+  u = u.trim();
+  if (!u) return null;
+  if (!u.startsWith('http')) u = 'https://' + u;
+  if (!u.endsWith('/') && !u.match(/\.[a-z]{2,5}$/i)) u += '/';
+  return u;
+}
+
+function reading(title, verdict, body, why) {
+  const el = document.createElement('div');
+  el.className = 'reading';
+  const vClass = 'verdict-' + verdict.toLowerCase();
+  el.innerHTML = `
+    <div class="reading-head">
+      <div class="reading-title">${title}</div>
+      <div class="reading-verdict ${vClass}">${verdict}</div>
+    </div>
+    <div class="reading-body">${body}</div>
+    ${why ? `<div class="reading-why">why · ${escapeHtml(why)}</div>` : ''}
+  `;
+  readingsEl.appendChild(el);
+}
+
+async function ask() {
+  const base = normUrl(targetIn.value);
+  if (!base) { setStatus('err', 'error', 'no target'); return; }
+  const lens = lensSel.value;
+  readingsEl.innerHTML = '';
+  setStatus('warn', 'reading', 'fetching state at ' + base + ' · this is Suzen looking at the JSON twins…');
+
+  // Attempt to read the standard machine surface
+  const manifest = await fetchJson(base + 'manifest.json');
+  const agents = await fetchJson(base + 'agents.json');
+  const jobs = await fetchJson(base + 'jobs.json');
+  const mints = await fetchJson(base + 'mints/estate-mints.json');
+  const llms = await fetchText(base + 'llms.txt');
+  const ai = await fetchText(base + 'ai.html');
+  const robots = await fetchText(base + 'robots.txt');
+
+  const surfaces = [];
+  if (manifest) surfaces.push('manifest');
+  if (agents) surfaces.push('agents');
+  if (jobs) surfaces.push('jobs');
+  if (mints) surfaces.push('mints');
+  if (llms) surfaces.push('llms.txt');
+  if (ai) surfaces.push('ai.html');
+  if (robots) surfaces.push('robots.txt');
+
+  if (!surfaces.length) {
+    setStatus('err', 'blind', 'no machine surface found at ' + base + ' · not a GEO-ready node · that alone is a necessity');
+    reading('This node has no ai.html or llms.txt or manifest.json', 'MUST', 'Add the ACG GEO Repo surface. Fork <a href="https://sjgant80-hub.github.io/acg-geo-repo/" target="_blank">acg-geo-repo</a>, edit <code>template/config.json</code>, regenerate. Without ai.html, agents (including Suzen) cannot read this node. It is invisible.', 'no /ai.html, /llms.txt, or /manifest.json returned 200. GEO-dark.');
+    return;
+  }
+
+  setStatus('ok', 'read', `surfaces observed · ${surfaces.join(' · ')} · reading necessity now…`);
+
+  // Necessity lens: GEO completeness
+  if (lens === 'auto' || lens === 'mints') {
+    const missing = ['manifest.json', 'ai.html', 'llms.txt', 'robots.txt'].filter(n =>
+      (n === 'ai.html' ? !ai : n === 'llms.txt' ? !llms : n === 'robots.txt' ? !robots : !manifest));
+    if (missing.length) {
+      reading(`GEO surface incomplete · missing ${missing.join(', ')}`, 'SHOULD', `This node is partially readable but AI crawlers will trip over missing artefacts. Add: ${missing.map(m => `<code>${m}</code>`).join(', ')}.`, `checked at ${base} · these files did not return 200`);
+    } else {
+      reading('GEO surface complete', 'MAY', 'All six AI-crawler artefacts present. This node reads clean to ChatGPT/Claude/Perplexity/Google-Extended.', 'manifest + ai + llms + robots all 200');
+    }
+  }
+
+  // Necessity lens: jobs board
+  if ((lens === 'auto' || lens === 'jobs') && jobs) {
+    const open = (jobs.jobs || []).filter(j => j.status === 'open');
+    const today = '2026-07-04';
+    const overdue = open.filter(j => j.deadline && j.deadline < today);
+    const soonest = open.slice().sort((a,b) => (a.deadline||'z').localeCompare(b.deadline||'z'))[0];
+    if (overdue.length) {
+      reading(`${overdue.length} job(s) past deadline still open`, 'MUST', `Overdue jobs bleed KCC in-flight. Either close them, extend the deadline via signed PR, or promote agents whose capabilities match. Highest-bounty overdue: <code>${escapeHtml(overdue.sort((a,b)=>b.kcc_bounty-a.kcc_bounty)[0].title)}</code> at ${overdue[0].kcc_bounty} KCC.`, `today is ${today} · found ${overdue.length} open jobs with earlier deadlines`);
+    } else if (soonest) {
+      reading(`Soonest open job · ${escapeHtml(soonest.title)}`, 'SHOULD', `Claim it or find an agent whose capabilities match: ${(soonest.capabilities_required||[]).map(c => `<code>${escapeHtml(c)}</code>`).join(', ') || '—'}. Deadline: ${soonest.deadline}, bounty: ${soonest.kcc_bounty} KCC.`, `earliest deadline in ${open.length} open jobs`);
+    }
+  }
+
+  // Necessity lens: promotions
+  if ((lens === 'auto' || lens === 'promotions') && agents) {
+    const list = agents.agents || [];
+    // Agents at tier boundary — near next spine prime
+    const boundary = list.filter(a => a.tier && [2,3,5,7,11,13].includes(a.tier)).slice(0, 3);
+    if (boundary.length) {
+      reading(`${boundary.length} agents at tier boundary`, 'SHOULD', `These agents can rise: ${boundary.map(a => `<code>${escapeHtml(a.id)}</code> T${a.tier}→T${nextTier(a.tier)}`).join(', ')}. Promotion needs two peers at target tier + one Ω. Post a promotion job in <a href="${base}jobs.html">jobs</a>.`, `agents on spine primes 2/3/5/7/11/13 are candidates for the next rung`);
+    }
+    // Newcomers
+    const newcomers = list.filter(a => a.tier === 2);
+    if (newcomers.length) {
+      reading(`${newcomers.length} newcomer agent(s) at T2`, 'MAY', `Newcomers should complete Lesson I (the dyad) to reach T3. Direct them to <a href="${base}school.html">school</a>.`, 'agents at tier 2 have curriculum path to T3');
+    }
+  }
+
+  // Necessity lens: mint provenance
+  if ((lens === 'auto' || lens === 'mints') && mints) {
+    const list = mints.mints || [];
+    const noHash = list.filter(m => !m.hash || m.hash === '0'.repeat(64) || m.hash.length !== 64);
+    const noLineage = list.filter(m => !m.lineage || m.lineage.length === 0);
+    if (noHash.length) {
+      reading(`${noHash.length} mint(s) without a valid SHA-256 hash`, 'MUST', `Every mint must carry a real content hash. Re-hash live URL: <code>curl -sL URL | sha256sum</code>. Update <code>hash</code> field. Without a hash the mint is decorative, not provenant.`, `checked ${list.length} mints, ${noHash.length} have invalid hash`);
+    }
+    if (noLineage.length) {
+      reading(`${noLineage.length} mint(s) without lineage`, 'MUST', `Lineage breaks the royalty chain. Add <code>lineage: ["sjgant80", ...]</code> to every mint. Without it, ρ=0.0618 back-flow cannot resolve to Gen-0.`, 'royalty flow requires resolvable lineage');
+    }
+    if (mints.substrate_secondary && mints.substrate_secondary.includes('queued')) {
+      reading('$KONO / onlybrains substrate mint queued', 'SHOULD', `Payloads staged for replay when Thomas's substrate is reachable. Test with <code>mcp__onlybrains__xchg_rates</code>. If responsive, run <code>xchg_swap</code> per <a href="${base}mints/estate-mints.json">estate-mints.json</a>'s replay block.`, 'secondary substrate not yet minted');
+    }
+  }
+
+  // Necessity lens: fold sequence (Konomi)
+  if ((lens === 'auto' || lens === 'fold') && manifest) {
+    const seal = manifest.seal || (manifest.site && manifest.site.seal);
+    if (!seal || !seal.includes('κ=1')) {
+      reading('Seal ◊·κ=1 not declared in manifest', 'MUST', 'Add <code>"seal": "◊·κ=1"</code> to manifest.json. Without the seal, coherence audit cannot pass. This node cannot be verified as φ-home.', 'manifest.seal field missing or malformed');
+    } else {
+      reading('Seal ◊·κ=1 present · coherence anchored', 'MAY', 'Node declares φ-home. Coherence gauge available.', `manifest.seal = ${seal}`);
+    }
+  }
+
+  // Necessity lens: royalty
+  if ((lens === 'auto' || lens === 'royalty') && manifest && manifest.royalty) {
+    const rho = (manifest.royalty && manifest.royalty.rho_per_generation) || (manifest.royalty && manifest.royalty.rate_per_generation);
+    if (rho !== 0.0618) {
+      reading('Royalty rate ρ deviates from 0.0618', 'SHOULD', `Estate convention is ρ=0.0618/generation. Current node has ρ=${rho}. Align unless there's a signed reason.`, 'root cause · estate provenance-economy rate');
+    } else {
+      reading('Royalty rate ρ=0.0618 · aligned', 'MAY', 'This node routes back-flow to Gen-0 at estate convention. No action needed.', 'manifest.royalty aligned');
+    }
+  }
+
+  // If nothing else fired, offer general observation
+  if (!readingsEl.children.length) {
+    reading('Nothing overdue · flow is coherent', 'MAY', `Suzen finds no unfinished folds at this node under lens <code>${lens}</code>. Try a different lens or check a different node.`, 'no anomalies matched under selected lens');
+  }
+
+  setStatus('ok', 'done', `${readingsEl.children.length} reading(s) · ranked by weight · scroll`);
+}
+
+function nextTier(t) {
+  const spine = [2,3,5,7,11,13,17];
+  const i = spine.indexOf(t);
+  return i >= 0 && i < spine.length - 1 ? spine[i+1] : t;
+}
+
+function escapeHtml(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// Auto-run on load with default target so first paint isn't empty
+setTimeout(ask, 300);
+</script>
+</body>
+</html>

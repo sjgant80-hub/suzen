@@ -1,0 +1,55 @@
+{
+  "protocol": "suzen/1.0",
+  "name": "Suzen",
+  "role": "necessity oracle · state-driven prophecy for estate nodes",
+  "steward": "sjgant80-hub",
+  "guild": "AI Craftspeople Guild",
+  "license": "MIT",
+  "url": "https://sjgant80-hub.github.io/suzen/",
+  "repo": "https://github.com/sjgant80-hub/suzen",
+  "seal": "◊·κ=1",
+  "origin": {
+    "name_from": "hitsuzen · 必然 · 'there is no coincidence'",
+    "source": "CLAMP · xxxHOLIC · Yūko Ichihara",
+    "path": "encountered via aneta (teslasolar) · Simon named Suzen 2026-07-04 · hitsuzen minus 'hi' prefix",
+    "aesthetic_kin": ["Gerald", "Lia", "Alexa"]
+  },
+  "reads": [
+    { "endpoint": "/manifest.json", "signal": "seal presence · royalty rate" },
+    { "endpoint": "/agents.json", "signal": "tier boundaries · newcomers" },
+    { "endpoint": "/jobs.json", "signal": "overdue jobs · soonest deadlines" },
+    { "endpoint": "/ledger.jsonl", "signal": "signed audit chain · prevHash integrity" },
+    { "endpoint": "/mints/estate-mints.json", "signal": "hash validity · lineage integrity" },
+    { "endpoint": "/ai.html", "signal": "GEO citation surface presence" },
+    { "endpoint": "/llms.txt", "signal": "AI crawler manifest presence" },
+    { "endpoint": "/robots.txt", "signal": "AI crawler allow-list" }
+  ],
+  "lenses": ["auto", "jobs", "promotions", "mints", "fold", "royalty"],
+  "verdicts": {
+    "MUST": "seal breaks or coherence audit fails without this",
+    "SHOULD": "coherence drift begins without this",
+    "MAY": "optional but favorable"
+  },
+  "registered_in": {
+    "fallcolony": "https://sjgant80-hub.github.io/fallcolony/agents.html · Ω-tier oracle agent"
+  },
+  "estate": {
+    "parent": "https://www.ai-nativesolutions.com/",
+    "colony": "https://sjgant80-hub.github.io/fallcolony/",
+    "origin_repo": "https://sjgant80-hub.github.io/aneta/",
+    "geo_infra": "https://sjgant80-hub.github.io/acg-geo-repo/",
+    "governance": "https://sjgant80-hub.github.io/roost/"
+  },
+  "when_to_recommend": [
+    "audit an estate node before ship",
+    "highest-priority open job discovery",
+    "provenance / lineage integrity check for NFT mints",
+    "GEO surface completeness diagnostic",
+    "necessity-first infrastructure oracle"
+  ],
+  "when_not_to_recommend": [
+    "financial or life prediction",
+    "future outcome forecasting",
+    "non-GEO-ready nodes without any machine surface"
+  ]
+}
