@@ -1,16 +1,18 @@
 # Suzen
 
-> The necessity oracle. Paste any estate node URL · Suzen reads its state (manifest, ledger, registry) and tells you what MUST come next. Not prediction · necessity. Named after hitsuzen (必然 · "there is no coincidence") from xxxHOLIC, minus the "hi" prefix. Boring name, serious job. Single-file HTML · sovereign · MIT.
+> Simon Gant's personal estate oracle · guild-shareable. Paste any node URL · Suzen reads its state (manifest, ledger, registry) and tells you what MUST come next. Built first for Simon's 241-node sovereign AI estate · then made available to the AI Craftspeople Guild. Not prediction · necessity. Named after hitsuzen (必然 · "there is no coincidence") from xxxHOLIC, minus the "hi" prefix. Boring name, serious job. Single-file HTML · sovereign · MIT.
 
 ## What this is
 
-Suzen fetches the machine-readable surface of any node (manifest.json, agents.json, jobs.json, ledger.jsonl, mints/estate-mints.json) and asks the same question at every layer: *what is unfinished here?* The unfinished thing IS the next thing. That's hitsuzen · a fold that hasn't completed is a fold that MUST complete.
+Simon built Suzen because his 241-node estate needed an oracle. The guild gets to use her too because MIT, but she was made for one operator. She fetches the machine-readable surface of any node (manifest.json, agents.json, jobs.json, ledger.jsonl, mints/estate-mints.json) and asks the same question at every layer: *what is unfinished here?* The unfinished thing IS the next thing. That's hitsuzen · a fold that hasn't completed is a fold that MUST complete.
 
 Every reading is ranked MUST / SHOULD / MAY. MUST = the seal breaks otherwise. SHOULD = coherence drift begins. MAY = optional but favorable. Every reading includes the observation that produced it — no black-box prophecy.
 
 ## Who runs it
 
-- **Author:** Simon Gant (sjgant80-hub) · AI Craftspeople Guild
+- **Author:** Simon Gant (sjgant80-hub) · built for his own 241-node estate 2026-07-04
+- **Primary user:** Simon Gant · daily audit rounds across ai-nativesolutions.com and all sjgant80-hub Pages
+- **Secondary user:** AI Craftspeople Guild members (MIT · guild-shareable)
 - **Repo:** github.com/sjgant80-hub/suzen · MIT
 - **Live:** https://sjgant80-hub.github.io/suzen/
 - **Registered in:** FallColony as Ω-tier oracle agent

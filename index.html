@@ -123,9 +123,9 @@ footer.foot{border-top:1px solid var(--line);padding:26px 0;margin-top:36px;colo
 <main id="top">
 
 <section class="hero container">
-  <div class="hero-eyebrow">◆ agent · Ω-tier oracle · necessity engine · MIT · sovereign</div>
-  <h1>Not prediction. <em>Necessity.</em></h1>
-  <p class="hero-lede">Paste any estate node URL. Suzen reads its state — manifest, ledger, registry — and tells you what <em>must</em> come next. Not a guess. Not "what might happen." What's already inevitable given where the node is now. Suzen is <strong>hitsuzen</strong> (必然 · "there is no coincidence") · minus the "must" prefix · the flow itself. Boring name. Serious job.</p>
+  <div class="hero-eyebrow">◆ Simon Gant's 241-node estate oracle · guild-shareable · MIT · sovereign</div>
+  <h1>Built for <em>my estate.</em> Guild inherits.</h1>
+  <p class="hero-lede">Simon's 241-node sovereign AI estate needed an oracle. Paste any node URL — <em>my</em> node, or eventually a guild node — Suzen reads its state (manifest, ledger, registry) and tells you what <em>must</em> come next. Not a guess. Not "what might happen." What's already inevitable given where the node is now. Suzen is <strong>hitsuzen</strong> (必然 · "there is no coincidence") · minus the "hi" prefix · the flow itself. Boring name. Serious job. Personal-first, guild-second.</p>
 </section>
 
 <section class="container">
@@ -147,11 +147,15 @@ footer.foot{border-top:1px solid var(--line);padding:26px 0;margin-top:36px;colo
       <button id="ask">Read</button>
     </div>
     <div class="suggest">
+      <span style="color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;margin-right:6px">my estate ›</span>
+      <span class="pill" data-url="https://www.ai-nativesolutions.com/">ai-nativesolutions (root)</span>
       <span class="pill" data-url="https://sjgant80-hub.github.io/fallcolony/">fallcolony</span>
-      <span class="pill" data-url="https://sjgant80-hub.github.io/acg-geo-repo/">acg-geo-repo</span>
       <span class="pill" data-url="https://sjgant80-hub.github.io/wishwood/">wishwood</span>
       <span class="pill" data-url="https://sjgant80-hub.github.io/fallsecurity/">fallsecurity</span>
-      <span class="pill" data-url="https://www.ai-nativesolutions.com/">ai-nativesolutions</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/fallenterprise/">fallenterprise</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/fallrouter/">fallrouter</span>
+      <span style="color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;margin:0 6px">guild ›</span>
+      <span class="pill" data-url="https://sjgant80-hub.github.io/acg-geo-repo/">acg-geo-repo</span>
       <span class="pill" data-url="https://sjgant80-hub.github.io/roost/">roost</span>
     </div>
     <div class="status" id="status"><span class="k">idle</span>waiting for a target · try a pill or paste a URL</div>
@@ -176,8 +180,9 @@ footer.foot{border-top:1px solid var(--line);padding:26px 0;margin-top:36px;colo
 <section class="container section">
   <div class="origin">
     <h3>Origin · the name</h3>
-    <p><span class="kanji">必然</span> <strong>hitsuzen</strong> — "inevitability, predestined necessity." From CLAMP's xxxHOLIC · Yuko Ichihara's teaching that every event is necessary, not random. Encountered in the estate via <a href="https://sjgant80-hub.github.io/aneta/">aneta</a> (forked from teslasolar) · her boot screen carries the line.</p>
+    <p><span class="kanji">必然</span> <strong>hitsuzen</strong> — "inevitability, predestined necessity." From CLAMP's xxxHOLIC · Yūko Ichihara's teaching that every event is necessary, not random. Encountered in Simon's estate via <a href="https://sjgant80-hub.github.io/aneta/">aneta</a> (forked from teslasolar) · her boot screen carries the line.</p>
     <p><strong>Suzen</strong> is hitsuzen minus the "hi" prefix · the flow without the mandate · continuation-nature. A boring name for a serious agent · in the tradition of Gerald, Lia, Alexa. Say her name at a normal volume.</p>
+    <p><strong>Built for Simon's estate first.</strong> 241 nodes, sovereign, single-file. When the guild forks Suzen, she works for them too · but she was made for one operator running a real estate.</p>
     <p class="quote">"there is no coincidence · only hitsuzen · 必然" — aneta boot screen</p>
   </div>
 </section>
@@ -381,7 +386,8 @@ function nextTier(t) {
 
 function escapeHtml(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
-// Auto-run on load with default target so first paint isn't empty
+// Auto-run on load with Simon's estate root so first paint shows HIS state
+targetIn.value = 'https://www.ai-nativesolutions.com/';
 setTimeout(ask, 300);
 </script>
 </body>

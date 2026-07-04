@@ -2,6 +2,7 @@
   "protocol": "suzen/1.0",
   "name": "Suzen",
   "role": "necessity oracle · state-driven prophecy for estate nodes",
+  "built_for": "Simon Gant's 241-node sovereign AI estate (primary) · AI Craftspeople Guild (secondary · MIT-inherited)",
   "steward": "sjgant80-hub",
   "guild": "AI Craftspeople Guild",
   "license": "MIT",

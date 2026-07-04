@@ -1,6 +1,8 @@
 # Suzen
 
-**The necessity oracle · reads any estate node's JSON twins and tells you what MUST come next.**
+**Simon Gant's personal estate oracle · guild-shareable.**
+
+Reads any node's JSON twins and tells you what MUST come next. Built for Simon's 241-node sovereign AI estate first · the AI Craftspeople Guild inherits her through MIT.
 
 Single-file HTML · sovereign · MIT.
 
