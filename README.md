@@ -49,4 +49,4 @@ Every reading includes the observation that produced it. No black-box prophecy.
 
 MIT.
 
-**◊·κ=1 · phi is home**
+**phi is home**
